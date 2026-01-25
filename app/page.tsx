@@ -54,10 +54,10 @@ export default async function Home({ searchParams }: PageProps) {
   return (
     <main className="relative overflow-hidden bg-paper flex flex-col items-center justify-center">
       <div className="absolute inset-0 z-10 pointer-events-none bg-[url('/texture.png')] bg-repeat mix-blend-multiply opacity-50 dark:mix-blend-multiply"></div>
-      <h1 className="pt-[25dvh] text-4xl md:text-6xl text-center max-w-[664px] px-6 leading-[1.1] font-normal">{title}</h1>
+      <h1 className="pt-[25dvh] text-4xl md:text-6xl text-center max-w-[664px] px-5 leading-[1.1] font-normal">{title}</h1>
 
       <div className="pt-12 text-lg flex flex-col gap-14 leading-[1.7] items-center">
-        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
+        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
           <p>
             Nos conocimos en Toulouse, hace X años. Estudiando un máster. Soñando con viajar lejos.
           </p>
@@ -69,7 +69,7 @@ export default async function Home({ searchParams }: PageProps) {
           </p>
         </div>
 
-        <div className="flex flex-row gap-3 px-6 overflow-x-auto w-full">
+        <div className="flex flex-row gap-3 px-5 overflow-x-auto w-full">
           <Image
             src={image6}
             alt="Albert y Cris"
@@ -123,7 +123,7 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
 
 
-        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
+        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
           <h2 className="text-3xl text-center">¿Dónde y cuándo?</h2>
           <p>Sábado, 6 de junio de 2026, a las 18:00 h.</p>
           <p>Nos veremos en el Palacio de la Margarita, en Collado Villalba (Madrid). Puedes ver cómo llegar y ubicarte fácilmente en <Link className="underline opacity-70" href="https://maps.google.com/?q=Palacio+de+la+Margarita+Collado+Villalba" target="_blank" rel="noopener noreferrer">Google Maps</Link>, o echar un vistazo al lugar en su <Link className="underline opacity-70" href="https://www.instagram.com/palaciolamargarita/" target="_blank" rel="noopener noreferrer">Instagram</Link> para ir entrando en ambiente.</p>
@@ -136,7 +136,7 @@ export default async function Home({ searchParams }: PageProps) {
           <p>Compartiremos los horarios del autobús más adelante.</p>
         </div>
 
-        <div className="flex flex-row gap-3 px-6 overflow-x-auto items-center justify-start">
+        <div className="flex flex-row gap-3 px-5 overflow-x-auto items-center justify-start">
           <Image
             src={imagePalacio3}
             alt="Palacio de la Margarita"
@@ -197,7 +197,7 @@ export default async function Home({ searchParams }: PageProps) {
           />
         </div>
 
-        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
+        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
           <h2 className="text-3xl text-center">¿Y después de la fiesta?</h2>
           <h3 className="text-xl">Quédate en la finca</h3>
           <p>
@@ -221,7 +221,7 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
 
 
-        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
+        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
           <h2 className="text-3xl text-center">Pero antes… la preboda</h2>
           <p>
             El <span className="font-medium">viernes 5 de junio, a las 20:00 h</span>, empezamos a celebrar juntos en
@@ -237,7 +237,7 @@ export default async function Home({ searchParams }: PageProps) {
           </p>
         </div>
 
-        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
+        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
           <h2 className="text-3xl text-center">Ahora solo falta tu respuesta.</h2>
           <p>Ayúdanos rellenando este formulario para poder preparar la fiesta como se merece.</p>
           <p className="font-medium text-xl">Albert y Cris</p>
