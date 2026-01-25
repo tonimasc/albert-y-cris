@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, } from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sourceSerif4 = Source_Serif_4({
+  variable: "--font-source-serif-4",
   subsets: ["latin"],
 });
 
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${geistSans.variable} antialiased`}
+        className={`${sourceSerif4.variable} antialiased`}
       >
         {children}
       </body>
