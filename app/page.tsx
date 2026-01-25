@@ -1,3 +1,11 @@
+import Image from "next/image";
+import image1 from "@/public/image-1.jpeg";
+import image2 from "@/public/image-2.jpeg";
+import image3 from "@/public/image-3.jpeg";
+import image4 from "@/public/image-4.jpeg";
+import image5 from "@/public/image-5.jpeg";
+import image6 from "@/public/image-6.jpeg";
+
 interface PageProps {
   searchParams: Promise<{ name?: string }>;
 }
@@ -7,41 +15,76 @@ export default async function Home({ searchParams }: PageProps) {
   const guestName = name || "";
 
   return (
-    <main className="relative min-h-dvh w-full overflow-hidden bg-paper flex flex-col items-center justify-center">
-      <div className="absolute inset-0 z-[5] pointer-events-none bg-[url('/texture.png')] bg-repeat mix-blend-multiply opacity-50 dark:mix-blend-multiply"></div>
+    <main className="relative overflow-clip bg-paper flex flex-col items-center justify-center">
+      <div className="absolute inset-0 z-10 pointer-events-none bg-[url('/texture.png')] bg-repeat mix-blend-multiply opacity-50 dark:mix-blend-multiply"></div>
+      <h1 className="pt-[25dvh] text-4xl md:text-6xl text-center max-w-[664px] px-6 leading-[1.1] font-normal">Toni, queremos que nos acompañes</h1>
 
-      <div>
-        <h1 className="text-6xl text-center max-w-[800px] font-normal">Toni, queremos que nos acompañes</h1>
-      </div>
-
-      <div className="max-w-2xl w-full px-6 pt-12 text-xl flex flex-col gap-12">
-        <div>
+      <div className="pt-12 text-xl flex flex-col gap-14 leading-normal items-center">
+        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
           <p>
-            Nos conocimos en Toulouse, hace seis años.
-            Estudiando un máster.
-            Soñando con viajar lejos.
+            Nos conocimos en Toulouse, hace seis años. Estudiando un máster. Soñando con viajar lejos.          Desde entonces hemos recorrido 27 países juntos. Y en uno de ellos, en un barco en medio del Mar Rojo, tomamos la decisión más importante: seguir así para siempre.
           </p>
           <p>
-            Desde entonces hemos recorrido 27 países juntos.
-            Y en uno de ellos,
-            en un barco en medio del Mar Rojo,
-            tomamos la decisión más importante:
-            seguir así para siempre.
-          </p>
-          <p>
-            Ahora nos casamos.
-            Y no tendría sentido celebrarlo sin ti.
+            Ahora nos casamos. Y no tendría sentido celebrarlo sin ti.
           </p>
         </div>
 
+        <div className="flex flex-row gap-3 px-6 overflow-x-scroll">
+          <Image
+            src={image1}
+            alt="Albert y Cris"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+            placeholder="blur"
+          />
+          <Image
+            src={image2}
+            alt="Albert y Cris"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+            placeholder="blur"
+          />
+          <Image
+            src={image3}
+            alt="Albert y Cris"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+            placeholder="blur"
+          />
+          <Image
+            src={image4}
+            alt="Albert y Cris"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+            placeholder="blur"
+          />
+          <Image
+            src={image5}
+            alt="Albert y Cris"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+            placeholder="blur"
+          />
+          <Image
+            src={image6}
+            alt="Albert y Cris"
+            width={300}
+            height={300}
+            className="object-cover rounded-lg"
+            placeholder="blur"
+            objectFit="cover"
+          />
+        </div>
 
-        <div>
-          <h2>Donde y cuando</h2>
-          <p>Sábado, 6 de Junio de 2026 a las 18:00h</p>
-          <p>Te esperamos en</p>
-          <h2>Palacio de la Margarita</h2>
-          <p>Collado Villalba, Madrid</p>
-          <p>A partir de las 18:00h</p>
+
+        <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
+          <h2 className="text-3xl text-center">Donde y cuando</h2>
+          <p>Sábado, 6 de Junio de 2026 a las 18:00h Te esperamos en Palacio de la Margarita Collado Villalba, Madrid</p>
           <a href="https://maps.google.com/?q=Palacio+de+la+Margarita+Collado+Villalba" target="_blank" rel="noopener noreferrer">
             Cómo llegar
           </a>
@@ -69,7 +112,7 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
 
         <div>
-          <h2>¿Y después de la fiesta?</h2>
+          <h2 className="text-3xl text-center">¿Y después de la fiesta?</h2>
           <div>
             <h3>Quédate en la finca</h3>
             <p>
@@ -100,7 +143,7 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
 
         <div>
-          <h2>Pero antes...</h2>
+          <h2 className="text-3xl text-center">Pero antes...</h2>
           <p>
             El viernes por la noche queremos verte en la preboda.
             Para ir entrando en calor.
@@ -123,16 +166,11 @@ export default async function Home({ searchParams }: PageProps) {
           </div>
         </div>
 
-        <div>
-          <p>
-            {guestName}, te queremos ahí.
-          </p>
-          <p>
-            Con mucho cariño,
-            <br />
-            Albert y Cris
-          </p>
-        </div>
+
+        <p>
+          Con mucho cariño, Albert y Cris
+        </p>
+
       </div>
     </main >
   );
