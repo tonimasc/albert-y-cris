@@ -44,7 +44,7 @@ export default async function Home({ searchParams }: PageProps) {
   return (
     <main className="relative overflow-clip bg-paper flex flex-col items-center justify-center">
       <div className="absolute inset-0 z-10 pointer-events-none bg-[url('/texture.png')] bg-repeat mix-blend-multiply opacity-50 dark:mix-blend-multiply"></div>
-      <h1 className="pt-[25dvh] text-4xl md:text-6xl text-center max-w-[664px] px-6 leading-[1.1] font-normal">Toni, queremos que nos acompañes</h1>
+      <h1 className="pt-[25dvh] text-4xl md:text-6xl text-center max-w-[664px] px-6 leading-[1.1] font-normal">{guestName}, queremos que nos acompañes</h1>
 
       <div className="pt-12 text-xl flex flex-col gap-16 leading-normal items-center">
         <div className="max-w-[558px] flex flex-col w-full px-6 gap-6">
