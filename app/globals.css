@@ -11,13 +11,14 @@
 
 @theme inline {
   --color-foreground: var(--foreground);
-  --font-serif: var(--font-cormorant-garamond);
-  --font-sans: var(--font-montserrat);
+  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-inter);
   --color-cream: var(--color-cream);
   --color-paper: var(--color-paper);
   --color-chocolate: var(--color-chocolate);
   --color-brown-dark: var(--color-brown-dark);
   --color-gold: var(--color-gold);
+  --color-charcoal: var(--color-charcoal);
 }
 
 body {
