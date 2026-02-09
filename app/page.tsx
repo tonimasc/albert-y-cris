@@ -1,19 +1,16 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import image1 from "@/public/image-1.jpeg";
 import image2 from "@/public/image-2.jpeg";
 import image3 from "@/public/image-3.jpeg";
 import image4 from "@/public/image-4.jpeg";
 import image5 from "@/public/image-5.jpeg";
 import image6 from "@/public/image-6.jpeg";
 
-import imagePalacio from "@/public/place/IMG_9297.jpg";
-import imagePalacio2 from "@/public/place/IMG_9298.jpg";
-import imagePalacio3 from "@/public/place/IMG_9299.jpg";
-import imagePalacio4 from "@/public/place/IMG_9300.jpg";
-import imagePalacio5 from "@/public/place/IMG_9301.jpg";
-import imagePalacio6 from "@/public/place/IMG_9302.jpg";
-import imagePalacio7 from "@/public/place/IMG_9303.jpg";
+import palacio2 from "@/public/house-2.png";
+
+import flower3 from "@/public/flower/flower-3.png";
+import flower2 from "@/public/flower/flower-2.png";
+import flower4 from "@/public/flower/flower-4.png";
 
 import Link from "next/link";
 
@@ -21,7 +18,9 @@ interface PageProps {
   searchParams: Promise<{ name?: string }>;
 }
 
-export async function generateMetadata({ searchParams }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  searchParams,
+}: PageProps): Promise<Metadata> {
   const { name } = await searchParams;
   const guestName = name || "";
 
@@ -29,7 +28,8 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
     ? `${guestName}, nos casamos y queremos que estés allí`
     : "Nos casamos y queremos que estés allí";
 
-  const description = "El sábado 6 de junio de 2026, a las 18:00 h, nos casamos en el Palacio de la Margarita, en Collado Villalba (Madrid). Nos haría mucha ilusión celebrarlo contigo.";
+  const description =
+    "El sábado 6 de junio de 2026, a las 18:00 h, nos casamos en el Palacio de la Margarita, en Collado Villalba (Madrid). Nos haría mucha ilusión celebrarlo contigo.";
 
   return {
     title,
@@ -49,41 +49,56 @@ export async function generateMetadata({ searchParams }: PageProps): Promise<Met
 
 export default async function Home({ searchParams }: PageProps) {
   const { name } = await searchParams;
-  const title = name ? `${name}, queremos que nos acompañes` : "Queremos que nos acompañes";
+  const title = name
+    ? `${name}, queremos que nos acompañes`
+    : "Queremos que nos acompañes";
 
   return (
-    <main className="relative overflow-hidden bg-paper flex flex-col items-center justify-center">
-      <div className="absolute inset-0 z-10 pointer-events-none bg-[url('/texture.png')] bg-repeat mix-blend-multiply opacity-50 dark:mix-blend-multiply"></div>
-      <h1 className="pt-[25dvh] text-4xl md:text-6xl text-center max-w-[664px] px-5 leading-[1.1] font-normal">{title}</h1>
+    <main className="relative flex flex-col items-center justify-center overflow-hidden bg-paper">
+      <div className="pointer-events-none absolute inset-0 z-10 bg-[url('/texture.png')] bg-repeat opacity-50 mix-blend-multiply dark:mix-blend-multiply"></div>
+      <div className="relative flex flex-col items-center gap-5 pt-20">
+        <Image
+          src={flower3}
+          alt="Flower"
+          width={680}
+          height={233}
+          className="w-full max-w-[680px] px-5"
+          placeholder="blur"
+        />
+        <h1 className="max-w-[664px] px-5 text-center font-serif text-5xl leading-[1.1] text-balance text-chocolate italic sm:text-6xl">
+          {title}
+        </h1>
+      </div>
 
-      <div className="pt-12 text-lg flex flex-col gap-14 leading-[1.7] items-center">
-        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
+      <div className="flex flex-col items-center gap-14 pt-12 font-serif text-2xl leading-normal">
+        <div className="flex w-full max-w-[496px] flex-col gap-4 px-5">
           <p>
-            Nos conocimos en Toulouse, hace X años. Estudiando un máster. Soñando con viajar lejos.
+            Hace ocho años, en Toulouse, llenos de sueños y ganas de comernos el
+            mundo, nuestros caminos se cruzaron por primera vez.
           </p>
           <p>
-            Desde entonces hemos recorrido X países juntos. Y en uno de ellos, en un barco en medio del Mar Rojo, tomamos la decisión más importante: seguir así para siempre.
+            Esta historia nació con kilómetros de por medio, pero con una
+            certeza muy clara: siempre merecía la pena.
           </p>
           <p>
-            Ahora nos casamos. Y no tendría sentido celebrarlo sin ti.
+            Entre incontables «ya he aterrizado», maletas hechas y deshechas,
+            despedidas y reencuentros, nuestras ganas de estar juntos fueron
+            creciendo.
           </p>
+          <p>
+            Tras cinco años, decidimos empezar una nueva vida juntos en Madrid y
+            ahora estamos listos para el siguiente paso.
+          </p>
+          <p>¡Sí, nos casamos! Y no tendría sentido celebrarlo sin ti.</p>
         </div>
 
-        <div className="flex flex-row gap-3 px-5 overflow-x-auto w-full">
+        <div className="flex w-full flex-row gap-3 overflow-x-auto px-5">
           <Image
             src={image6}
             alt="Albert y Cris"
             width={300}
             height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-          <Image
-            src={image1}
-            alt="Albert y Cris"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
+            className="h-[300px] w-[300px] rounded-md object-cover"
             placeholder="blur"
           />
           <Image
@@ -91,7 +106,7 @@ export default async function Home({ searchParams }: PageProps) {
             alt="Albert y Cris"
             width={300}
             height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
+            className="h-[300px] w-[300px] rounded-md object-cover"
             placeholder="blur"
           />
           <Image
@@ -99,7 +114,7 @@ export default async function Home({ searchParams }: PageProps) {
             alt="Albert y Cris"
             width={300}
             height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
+            className="h-[300px] w-[300px] rounded-md object-cover"
             placeholder="blur"
             objectFit="cover"
           />
@@ -108,7 +123,7 @@ export default async function Home({ searchParams }: PageProps) {
             alt="Albert y Cris"
             width={300}
             height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
+            className="h-[300px] w-[300px] rounded-md object-cover"
             placeholder="blur"
           />
           <Image
@@ -116,102 +131,95 @@ export default async function Home({ searchParams }: PageProps) {
             alt="Albert y Cris"
             width={300}
             height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
+            className="h-[300px] w-[300px] rounded-md object-cover"
             objectFit="cover"
             placeholder="blur"
           />
         </div>
 
+        <div className="text-charcoal flex w-full max-w-[558px] flex-col gap-12 px-5">
+          <h2 className="text-center text-4xl text-chocolate italic">
+            ¿Dónde y cuándo?
+          </h2>
+          <div className="flex flex-col gap-10">
+            <div className="flex flex-col items-center">
+              <p className="mb-2 text-center font-sans text-xs font-medium text-gold uppercase">
+                Fecha
+              </p>
+              <p className="text-2x text-center italic">Sábado, 6 de Junio</p>
+              <p className="text-center font-sans text-sm">
+                2026, a las 18:00 h
+              </p>
+            </div>
 
-        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
-          <h2 className="text-3xl text-center">¿Dónde y cuándo?</h2>
-          <p>Sábado, 6 de junio de 2026, a las 18:00 h.</p>
-          <p>Nos veremos en el Palacio de la Margarita, en Collado Villalba (Madrid). Puedes ver cómo llegar y ubicarte fácilmente en <Link className="underline opacity-70" href="https://maps.google.com/?q=Palacio+de+la+Margarita+Collado+Villalba" target="_blank" rel="noopener noreferrer">Google Maps</Link>, o echar un vistazo al lugar en su <Link className="underline opacity-70" href="https://www.instagram.com/palaciolamargarita/" target="_blank" rel="noopener noreferrer">Instagram</Link> para ir entrando en ambiente.</p>
-          <p>Si vienes en coche, no te preocupes: hay parking en la finca.</p>
+            <div className="flex flex-col items-center">
+              <p className="mb-2 text-center font-sans text-xs font-medium text-gold uppercase">
+                Lugar
+              </p>
+              <p className="text-2x text-center italic">
+                Palacio de la Margarita
+              </p>
+              <p className="mb-2 text-center font-sans text-sm">
+                Collado Villalba (Madrid)
+              </p>
+              <Link
+                className="font-sans text-sm text-gold uppercase underline hover:opacity-70"
+                href="https://maps.google.com/?q=Palacio+de+la+Margarita+Collado+Villalba"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver mapa
+              </Link>
+            </div>
+
+            <Image
+              src={palacio2}
+              alt="Palacio de la Margarita"
+              width={558}
+              height={558}
+              className="-mt-10 w-full [mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)] object-contain opacity-95 [-webkit-mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)]"
+              placeholder="blur"
+            />
+          </div>
+        </div>
+
+        <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
+          <h2 className="text-center text-4xl text-chocolate">Cómo llegar</h2>
+          <p>Si vienes en coche, no te preocupes, hay parking en la finca.</p>
           <p>También habrá autobuses de ida y vuelta desde:</p>
-          <ul className="list-disc list-inside">
-            <li>Madrid (Intercambiador de Moncloa)</li>
+          <ul className="list-inside list-disc">
+            <li>Madrid (zona Intercambiador de Moncloa)</li>
             <li>Las Rozas de Madrid</li>
           </ul>
-          <p>Compartiremos los horarios del autobús más adelante.</p>
+          <p>Compartiremos los detalles del autobús más adelante.</p>
         </div>
 
-        <div className="flex flex-row gap-3 px-5 overflow-x-auto items-center justify-start">
-          <Image
-            src={imagePalacio3}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-          <Image
-            src={imagePalacio}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-            objectFit="cover"
-          />
-          <Image
-            src={imagePalacio2}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-
-          <Image
-            src={imagePalacio4}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-          <Image
-            src={imagePalacio5}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-          <Image
-            src={imagePalacio6}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-          <Image
-            src={imagePalacio7}
-            alt="Palacio de la Margarita"
-            width={300}
-            height={300}
-            className="object-cover rounded-md w-[300px] h-[300px]"
-            placeholder="blur"
-          />
-        </div>
-
-        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
-          <h2 className="text-3xl text-center">¿Y después de la fiesta?</h2>
-          <h3 className="text-xl">Quédate en la finca</h3>
+        <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
+          <h2 className="text-center text-4xl text-chocolate">Alojamiento</h2>
           <p>
-            El Palacio de la Margarita cuenta con habitaciones para dormir allí mismo. Así no tienes que preocuparte de nada. Escríbenos y te contamos cómo reservar. <Link className="underline opacity-70" href="https://palaciolamargarita.es/habitaciones" target="_blank" rel="noopener noreferrer">
+            La propia finca cuenta con habitaciones para alojarse la noche de la
+            boda si queréis despreocuparos.
+            <Link
+              className="underline opacity-70"
+              href="https://palaciodelamargarita.com/habitaciones/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Ver habitaciones
             </Link>
           </p>
+          <p>Escríbenos y te contamos cómo reservar.</p>
 
-          <h3 className="text-xl">Hoteles cercanos</h3>
           <p>
-            También puedes alojarte en Las Rozas. Todos estos hoteles tienen parada de autobús:
+            En Madrid o en las Rozas ya que contaran con servicio de autobus.
           </p>
-          <ul className="list-disc list-inside">
-            <li >B&B Hotel Madrid Las Rozas</li>
+          <p>
+            Como no hay tanta oferta como en Madrid, a continuación os listamos
+            algunos hoteles en las Rozas (tened en cuenta que es una zona más
+            residencial si no vais en coche propio):
+          </p>
+          <ul className="list-inside list-disc">
+            <li>B&B Hotel Madrid Las Rozas</li>
             <li>Hotel Attica 21 — código: BODAS10</li>
             <li>Exe Gran Hotel Almenar — código: BODAAYC</li>
             <li>B&B Hotel Pinar de las Rozas</li>
@@ -219,13 +227,26 @@ export default async function Home({ searchParams }: PageProps) {
             <li>Hotel Monte Rozas</li>
           </ul>
         </div>
-
-
-        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
-          <h2 className="text-3xl text-center">Pero antes… la preboda</h2>
+        <Image
+          src={flower4}
+          alt="Flower"
+          width={680}
+          height={233}
+          className="w-full max-w-[680px] px-5"
+          placeholder="blur"
+        />
+        <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
+          <h2 className="text-center text-4xl text-chocolate italic">
+            Pero antes… la preboda
+          </h2>
           <p>
-            El <span className="font-medium">viernes 5 de junio, a las 20:00 h</span>, empezamos a celebrar juntos en
-            <span className="font-medium"> Ingenio Club</span>, en Villanueva de la Cañada, sin prisas y con una copa en la mano.{" "}
+            El{" "}
+            <span className="font-medium">
+              viernes 5 de junio, a las 20:00 h
+            </span>
+            , empezamos a celebrar juntos en
+            <span className="font-medium"> Ingenio Club</span>, en Villanueva de
+            la Cañada, con un cocktail en la mano y ganas de pasarlo bien.
             <Link
               className="underline opacity-70"
               href="https://maps.google.com/?q=Ingenio+Club+Villanueva+de+la+Cañada"
@@ -237,17 +258,32 @@ export default async function Home({ searchParams }: PageProps) {
           </p>
         </div>
 
-        <div className="max-w-[558px] flex flex-col w-full px-5 gap-6">
-          <h2 className="text-3xl text-center">Ahora solo falta tu respuesta.</h2>
-          <p>Ayúdanos rellenando este formulario para poder preparar la fiesta como se merece.</p>
-          <p className="font-medium text-xl">Albert y Cris</p>
-          FIRMAS XX
-          <div className="gap-4 pt-4 flex flex-col">
-            <h3 className="text-2xl text-center">Formulario de asistencia</h3>
-            <iframe src="https://tally.so/embed/RGDVgj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" height="700" width="100%" />
+        <Image
+          src={flower2}
+          alt="Flower"
+          width={680}
+          height={233}
+          className="w-full max-w-[680px] px-5"
+          placeholder="blur"
+        />
+
+        <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
+          <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
+            <h2 className="text-center text-4xl text-chocolate italic">
+              Ahora solo falta tu respuesta
+            </h2>
+            <p className="text-center">
+              Ayúdanos rellenando este formulario a lo largo de Febreropara
+              poder preparar la fiesta como se merece.
+            </p>
+            <iframe
+              src="https://tally.so/embed/RGDVgj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              height="800"
+              width="100%"
+            />
           </div>
         </div>
       </div>
-    </main >
+    </main>
   );
 }

@@ -4,17 +4,26 @@
   --foreground: #16140f;
   --color-cream: #f0efe4;
   --color-paper: #fcfcf9;
+  --color-chocolate: #9d7b7b;
+  --color-charcoal: #4a4238;
+  --color-gold: #b89e80;
 }
 
 @theme inline {
   --color-foreground: var(--foreground);
-  --font-serif: var(--font-source-serif-4);
+  --font-serif: var(--font-cormorant-garamond);
+  --font-sans: var(--font-montserrat);
   --color-cream: var(--color-cream);
   --color-paper: var(--color-paper);
+  --color-chocolate: var(--color-chocolate);
+  --color-brown-dark: var(--color-brown-dark);
+  --color-gold: var(--color-gold);
 }
 
 body {
   background: var(--color-paper);
   color: var(--foreground);
-  font-family: var(--font-source-serif-4);
+  font-family: var(--font-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
