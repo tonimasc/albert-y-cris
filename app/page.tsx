@@ -63,7 +63,7 @@ export default async function Home({ searchParams }: PageProps) {
             height={233}
             className="w-full px-5"
           />
-          <h1 className="px-5 text-center font-serif text-5xl leading-[1.1] text-balance text-chocolate sm:text-6xl">
+          <h1 className="px-5 text-center font-serif text-5xl leading-[1.1] tracking-tight text-balance text-chocolate italic sm:text-6xl">
             {title}
           </h1>
         </div>
@@ -135,16 +135,12 @@ export default async function Home({ searchParams }: PageProps) {
             />
           </div>
 
-          <div className="flex w-full flex-col gap-12 px-5">
-            <h2 className="text-center font-serif text-4xl text-chocolate">
-              ¿Dónde y cuándo?
-            </h2>
+          <div className="flex w-full flex-col gap-8 px-5">
+            <H2 text="¿Dónde y cuándo?" />
             <div className="flex flex-col gap-10">
               <div className="flex flex-col items-center">
-                <p className="mb-2 text-center font-sans text-xs font-medium text-gold uppercase">
-                  Fecha
-                </p>
-                <p className="text-center font-serif text-2xl">
+                <Label text="Fecha" />
+                <p className="mb-0.5 text-center font-serif text-2xl">
                   Sábado, 6 de Junio
                 </p>
                 <p className="text-center font-sans text-sm">
@@ -153,23 +149,17 @@ export default async function Home({ searchParams }: PageProps) {
               </div>
 
               <div className="flex flex-col items-center">
-                <p className="mb-2 text-center font-sans text-xs font-medium text-gold uppercase">
-                  Lugar
-                </p>
-                <p className="text-center font-serif text-2xl">
+                <Label text="Lugar" />
+                <p className="mb-0.5 text-center font-serif text-2xl">
                   Palacio de la Margarita
                 </p>
-                <p className="mb-2 text-center font-sans text-sm">
+                <p className="mb-1 text-center font-sans text-sm">
                   Collado Villalba (Madrid)
                 </p>
-                <Link
-                  className="font-sans text-sm text-gold uppercase underline hover:opacity-70"
+                <LinkButton
+                  text="VER MAPA"
                   href="https://maps.google.com/?q=Palacio+de+la+Margarita+Collado+Villalba"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver mapa
-                </Link>
+                />
               </div>
             </div>
           </div>
@@ -179,34 +169,29 @@ export default async function Home({ searchParams }: PageProps) {
             alt="Palacio de la Margarita"
             width={680}
             height={680}
-            className="-mt-15 w-full mask-none object-contain"
+            className="-mt-12 w-full mask-none object-contain"
             quality={100}
           />
 
-          <div className="flex w-full flex-col gap-10 px-5">
+          <div className="flex w-full max-w-[480px] flex-col gap-10 px-5">
             <div className="flex flex-col gap-4">
-              <h2 className="text-center font-serif text-4xl text-chocolate">
-                Cómo llegar
-              </h2>
+              <H2 text="Cómo llegar" />
               <p className="text-center">
-                Si vienes en coche, hay parking en la finca. También habrá
-                autobuses de ida y vuelta; compartiremos los detalles más
-                adelante.
+                Si vienes en coche, hay{" "}
+                <span className="font-semibold">parking en la finca</span>.
+                También habrá autobuses de ida y vuelta; compartiremos los
+                detalles más adelante.
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <p className="mb-2 text-center font-sans text-xs font-medium text-gold uppercase">
-                Autobuses
-              </p>
-              <div className="mb-5">
-                <p className="text-center font-serif text-2xl">
-                  Palacio de la Margarita
-                </p>
+              <Label text="Autobuses" />
+              <div className="mb-6">
+                <p className="mb-0.5 text-center font-serif text-2xl">Madrid</p>
                 <p className="text-center font-sans text-sm">
                   Zona Intercambiador de Moncloa
                 </p>
               </div>
-              <p className="text-center font-serif text-2xl">
+              <p className="mb-0.5 text-center font-serif text-2xl">
                 Las Rozas de Madrid
               </p>
               <p className="text-center font-sans text-sm">
@@ -214,6 +199,7 @@ export default async function Home({ searchParams }: PageProps) {
               </p>
             </div>
           </div>
+
           <Image
             src={flower4}
             alt="Flower"
@@ -221,62 +207,104 @@ export default async function Home({ searchParams }: PageProps) {
             height={137}
             className="w-full max-w-[400px] px-5"
           />
-          <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
-            <h2 className="text-center font-serif text-4xl text-chocolate">
-              Alojamiento
-            </h2>
-            <p>
-              La propia finca cuenta con habitaciones para alojarse la noche de
-              la boda si queréis despreocuparos.
-              <Link
-                className="underline opacity-70"
-                href="https://palaciodelamargarita.com/habitaciones/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ver habitaciones
-              </Link>
-            </p>
-            <p>Escríbenos y te contamos cómo reservar.</p>
 
-            <p>
-              En Madrid o en las Rozas ya que contaran con servicio de autobus.
-            </p>
-            <p>
-              Como no hay tanta oferta como en Madrid, a continuación os
-              listamos algunos hoteles en las Rozas (tened en cuenta que es una
-              zona más residencial si no vais en coche propio):
-            </p>
-            <ul className="list-inside list-disc">
-              <li>B&B Hotel Madrid Las Rozas</li>
-              <li>Hotel Attica 21 — código: BODAS10</li>
-              <li>Exe Gran Hotel Almenar — código: BODAAYC</li>
-              <li>B&B Hotel Pinar de las Rozas</li>
-              <li>Hotel Plaza Las Matas</li>
-              <li>Hotel Monte Rozas</li>
-            </ul>
+          <div className="flex w-full max-w-[480px] flex-col gap-10 px-5">
+            <div className="flex flex-col gap-4">
+              <H2 text="Alojamiento" />
+              <p className="text-center">
+                La finca dispone de habitaciones, pero si prefieres alojarte
+                cerca, te dejamos algunas recomendaciones.
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <h3 className="mb-2 text-center font-serif text-2xl tracking-tight">
+                Palacio de la Margarita
+              </h3>
+              <p className="mb-2 text-center">
+                Si quieres alojarte en la finca, escríbenos y te explicamos cómo
+                reservar.
+              </p>
+              <LinkButton
+                text="VER HABITACIONES"
+                href="https://palaciodelamargarita.com/habitaciones/"
+              />
+            </div>
+
+            <div className="flex flex-col items-center gap-1">
+              <h3 className="mb-2 text-center font-serif text-2xl tracking-tight">
+                Las Rozas
+              </h3>
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <HotelCard
+                  name="B&B Hotel Madrid Las Rozas"
+                  href="https://www.bbhotellaspinar.com/"
+                />
+                <HotelCard
+                  name="Hotel Attica 21"
+                  code="BODAS10"
+                  href="https://www.hotelatica21.com/"
+                />
+                <HotelCard
+                  name="Exe Gran Hotel Almenar"
+                  code="BODAAYC"
+                  href="https://www.exehotel.com/"
+                />
+                <HotelCard
+                  name="B&B Hotel Pinar de las Rozas"
+                  href="https://www.hotelplazalasmatas.com/"
+                />
+                <HotelCard
+                  name="Hotel Plaza Las Matas"
+                  href="https://www.hotelplazalasmatas.com/"
+                />
+                <HotelCard
+                  name="Hotel Monte Rozas"
+                  href="https://www.hotelmonterozas.com/"
+                />
+              </div>
+            </div>
           </div>
 
-          <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
-            <h2 className="text-center text-4xl text-chocolate italic">
-              Pero antes… la preboda
-            </h2>
-            <p>
-              El{" "}
-              <span className="font-medium">
+          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-10 px-5">
+            <div className="flex flex-col gap-4">
+              <H2 text="Preboda" />
+              <p className="text-center">
+                Empezamos a celebrar juntos con un cocktail en la mano y ganas
+                de pasarlo bien.
+              </p>
+            </div>
+            <div className="flex w-full max-w-[360px] flex-col items-center justify-center rounded-2xl border border-chocolate bg-white p-8">
+              <Label text="Evento Preboda" />
+              <p className="mb-1 text-center font-serif text-2xl">
+                Ingenio Club
+              </p>
+              <p className="mb-2 text-center">
                 viernes 5 de junio, a las 20:00 h
-              </span>
-              , empezamos a celebrar juntos en
-              <span className="font-medium"> Ingenio Club</span>, en Villanueva
-              de la Cañada, con un cocktail en la mano y ganas de pasarlo bien.
-              <Link
-                className="underline opacity-70"
-                href="https://maps.google.com/?q=Ingenio+Club+Villanueva+de+la+Cañada"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Ver en Google Maps
-              </Link>
+              </p>
+              <LinkButton
+                text="VER MAPA"
+                href="https://maps.app.goo.gl/4zJgCsVh7Ep6h4ms5"
+              />
+            </div>
+          </div>
+
+          <div className="flex w-full max-w-[480px] flex-col gap-4 px-5">
+            <H2 text="Regalos" />
+            <div className="flex flex-col gap-4">
+              <p className="text-center">
+                Vuestra presencia en nuestro gran día es el mejor regalo. Pero
+                si además queréis ayudarnos a empezar esta aventura juntos,
+                podéis hacerlo en esta cuenta.
+              </p>
+              <p className="text-center text-sm font-medium">
+                ES91 2100 0418 4502 0005 1332
+              </p>
+            </div>
+          </div>
+
+          <div className="relative flex w-full max-w-[480px] flex-col gap-4 px-5">
+            <p className="text-center font-serif text-xl tracking-tight italic">
+              Albert & Cristina
             </p>
           </div>
 
@@ -285,16 +313,14 @@ export default async function Home({ searchParams }: PageProps) {
             alt="Flower"
             width={680}
             height={233}
-            className="w-full max-w-[680px] px-5"
+            className="mt-10 h-auto w-full max-w-[680px] px-5"
           />
 
           <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
             <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
-              <h2 className="text-center font-serif text-4xl text-chocolate">
-                Ahora solo falta tu respuesta
-              </h2>
+              <H2 text="Ahora solo falta tu respuesta" />
               <p className="text-center">
-                Ayúdanos rellenando este formulario a lo largo de Febreropara
+                Ayúdanos rellenando este formulario a lo largo de Febrero para
                 poder preparar la fiesta como se merece.
               </p>
               <iframe
@@ -307,5 +333,52 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
       </div>
     </main>
+  );
+}
+
+function HotelCard({
+  name,
+  code,
+  href,
+}: {
+  name: string;
+  code?: string;
+  href: string;
+}) {
+  return (
+    <div className="flex flex-col gap-1">
+      <p className="font-serif">{name}</p>
+      {code && <p className="text-sm text-black/50">Código: {code}</p>}
+      <LinkButton text="VER" href={href} />
+    </div>
+  );
+}
+
+function H2({ text }: { text: string }) {
+  return (
+    <h2 className="text-center font-serif text-4xl tracking-tight text-chocolate italic">
+      {text}
+    </h2>
+  );
+}
+
+function Label({ text }: { text: string }) {
+  return (
+    <p className="mb-1 text-center font-sans text-xs font-medium text-gold uppercase">
+      {text}
+    </p>
+  );
+}
+
+function LinkButton({ text, href }: { text: string; href: string }) {
+  return (
+    <Link
+      className="font-sans text-sm text-gold uppercase underline hover:opacity-70"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {text}
+    </Link>
   );
 }
