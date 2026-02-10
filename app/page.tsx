@@ -7,10 +7,10 @@ import image5 from "@/public/image-5.jpeg";
 import image6 from "@/public/image-6.jpeg";
 
 import flower3 from "@/public/flower/flower-3.png";
-import flower2 from "@/public/flower/flower-2.png";
 import flower4 from "@/public/flower/flower-4.png";
 
 import Link from "next/link";
+import { Countdown } from "./countdown";
 
 interface PageProps {
   searchParams: Promise<{ name?: string }>;
@@ -68,7 +68,7 @@ export default async function Home({ searchParams }: PageProps) {
           </h1>
         </div>
 
-        <div className="flex flex-col items-center gap-14 pt-10 font-sans text-base leading-normal">
+        <div className="flex flex-col items-center gap-16 pt-10 font-sans text-base leading-normal">
           <div className="flex w-full max-w-[548px] flex-col gap-5 px-5">
             <p>
               Hace ocho años, en Toulouse, llenos de sueños y ganas de comernos
@@ -173,7 +173,7 @@ export default async function Home({ searchParams }: PageProps) {
             quality={100}
           />
 
-          <div className="flex w-full max-w-[480px] flex-col gap-10 px-5">
+          <div className="flex w-full max-w-[480px] flex-col gap-8 px-5">
             <div className="flex flex-col gap-4">
               <H2 text="Cómo llegar" />
               <p className="text-center">
@@ -234,7 +234,7 @@ export default async function Home({ searchParams }: PageProps) {
               <h3 className="mb-2 text-center font-serif text-2xl tracking-tight">
                 Las Rozas
               </h3>
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-3">
                 <HotelCard
                   name="B&B Hotel Madrid Las Rozas"
                   href="https://www.bbhotellaspinar.com/"
@@ -265,7 +265,15 @@ export default async function Home({ searchParams }: PageProps) {
             </div>
           </div>
 
-          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-10 px-5">
+          <Image
+            src="/flower/flower-1.png"
+            alt="Flower"
+            width={680}
+            height={233}
+            className="-mt-5 h-auto w-full max-w-[400px]"
+          />
+
+          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-8 px-5">
             <div className="flex flex-col gap-4">
               <H2 text="Preboda" />
               <p className="text-center">
@@ -273,12 +281,12 @@ export default async function Home({ searchParams }: PageProps) {
                 de pasarlo bien.
               </p>
             </div>
-            <div className="flex w-full max-w-[360px] flex-col items-center justify-center rounded-2xl border border-chocolate bg-white p-8">
+            <div className="flex flex-col items-center">
               <Label text="Evento Preboda" />
-              <p className="mb-1 text-center font-serif text-2xl">
+              <p className="mb-0.5 text-center font-serif text-2xl">
                 Ingenio Club
               </p>
-              <p className="mb-2 text-center">
+              <p className="mb-2 text-center text-sm">
                 viernes 5 de junio, a las 20:00 h
               </p>
               <LinkButton
@@ -288,33 +296,42 @@ export default async function Home({ searchParams }: PageProps) {
             </div>
           </div>
 
-          <div className="flex w-full max-w-[480px] flex-col gap-4 px-5">
-            <H2 text="Regalos" />
-            <div className="flex flex-col gap-4">
-              <p className="text-center">
-                Vuestra presencia en nuestro gran día es el mejor regalo. Pero
-                si además queréis ayudarnos a empezar esta aventura juntos,
-                podéis hacerlo en esta cuenta.
-              </p>
-              <p className="text-center text-sm font-medium">
-                ES91 2100 0418 4502 0005 1332
-              </p>
+          <div className="flex w-full max-w-[480px] flex-col items-center justify-center px-5">
+            <div className="flex flex-col items-center gap-4 pb-4">
+              <H2 text="Regalos" />
+              <div className="flex flex-col gap-4">
+                <p className="text-center">
+                  Vuestra presencia en nuestro gran día es el mejor regalo. Pero
+                  si además queréis ayudarnos a empezar esta aventura juntos,
+                  podéis hacerlo en esta cuenta.
+                </p>
+                <p className="text-center">ES9121000418450200051332</p>
+              </div>
             </div>
           </div>
 
-          <div className="relative flex w-full max-w-[480px] flex-col gap-4 px-5">
-            <p className="text-center font-serif text-xl tracking-tight italic">
-              Albert & Cristina
-            </p>
+          <div className="flex w-full max-w-[480px] flex-col gap-1 px-5">
+            <Image
+              src="/flower/flower-6.png"
+              alt="Flower"
+              width={680}
+              height={233}
+              className="h-auto w-full"
+            />
+            <div className="flex flex-col items-center">
+              <p className="text-center font-serif text-4xl tracking-tight text-chocolate italic">
+                Albert & Cristina
+              </p>
+              <Countdown />
+            </div>
+            <Image
+              src="/flower/flower-5.png"
+              alt="Flower"
+              width={680}
+              height={233}
+              className="h-auto w-full"
+            />
           </div>
-
-          <Image
-            src={flower2}
-            alt="Flower"
-            width={680}
-            height={233}
-            className="mt-10 h-auto w-full max-w-[680px] px-5"
-          />
 
           <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
             <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
@@ -346,10 +363,13 @@ function HotelCard({
   href: string;
 }) {
   return (
-    <div className="flex flex-col gap-1">
-      <p className="font-serif">{name}</p>
+    <div className="flex flex-col">
+      <li className="list-disc font-serif text-lg transition-opacity duration-200 marker:text-gold hover:opacity-70">
+        <Link href={href} target="_blank" rel="noopener noreferrer">
+          {name}
+        </Link>
+      </li>
       {code && <p className="text-sm text-black/50">Código: {code}</p>}
-      <LinkButton text="VER" href={href} />
     </div>
   );
 }
@@ -373,7 +393,7 @@ function Label({ text }: { text: string }) {
 function LinkButton({ text, href }: { text: string; href: string }) {
   return (
     <Link
-      className="font-sans text-sm text-gold uppercase underline hover:opacity-70"
+      className="font-sans text-sm text-gold uppercase underline transition-opacity duration-200 hover:opacity-70"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
