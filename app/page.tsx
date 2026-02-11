@@ -300,7 +300,7 @@ export default async function Home({ searchParams }: PageProps) {
               <div className="flex flex-col gap-4">
                 <p className="text-center">
                   Vuestra presencia es el mejor regalo. Si aún así queréis
-                  ayudarnos a empezar esta aventura, podéis hacerlo aquí: ES43
+                  ayudarnos con nuestra luna de miel, podéis hacerlo aquí: ES43
                   1583 0001 1391 8025 4342
                 </p>
               </div>
