@@ -272,7 +272,7 @@ export default async function Home({ searchParams }: PageProps) {
               <div className="flex flex-col items-center">
                 <Label text="Fecha" />
                 <p className="mb-0.5 text-center font-serif text-2xl">
-                  Viernes 5 de junio
+                  Viernes 5 de Junio
                 </p>
                 <p className="text-center font-sans text-sm">
                   2026, a las 20:00 h
