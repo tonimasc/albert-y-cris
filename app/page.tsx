@@ -191,10 +191,9 @@ export default async function Home({ searchParams }: PageProps) {
             <div className="flex flex-col gap-4">
               <H2 text="Cómo llegar" />
               <p className="text-center">
-                Si vienes en coche, hay{" "}
-                <span className="font-semibold">parking en la finca</span>.
-                También habrá autobuses de ida y vuelta; compartiremos los
-                detalles más adelante.
+                Si vienes en coche, hay parking en la finca. También habrá
+                autobuses de ida y vuelta; compartiremos los detalles más
+                adelante.
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -208,9 +207,7 @@ export default async function Home({ searchParams }: PageProps) {
               <p className="mb-0.5 text-center font-serif text-2xl">
                 Las Rozas de Madrid
               </p>
-              <p className="text-center font-sans text-sm">
-                A 20 minutos de la finca
-              </p>
+              <p className="text-center font-sans text-sm">Zona carretera A6</p>
             </div>
           </div>
 
@@ -222,26 +219,22 @@ export default async function Home({ searchParams }: PageProps) {
             className="w-full max-w-[400px] px-5"
           />
 
-          <div className="flex w-full max-w-[480px] flex-col gap-10 px-5">
-            <div className="flex flex-col gap-4">
+          <div className="flex w-full max-w-[480px] flex-col gap-8 px-5">
+            <div className="flex flex-col gap-6">
               <H2 text="Alojamiento" />
-              <p className="text-center">
-                La finca dispone de habitaciones, pero si prefieres alojarte
-                cerca, te dejamos algunas recomendaciones.
-              </p>
-            </div>
-            <div className="flex flex-col items-center">
-              <h3 className="mb-2 text-center font-serif text-2xl tracking-tight">
-                Palacio de la Margarita
-              </h3>
-              <p className="mb-2 text-center">
-                Si quieres alojarte en la finca, escríbenos y te explicamos cómo
-                reservar.
-              </p>
-              <LinkButton
-                text="VER HABITACIONES"
-                href="https://palaciodelamargarita.com/habitaciones/"
-              />
+              <div className="flex flex-col items-center">
+                <h3 className="mb-2 text-center font-serif text-2xl tracking-tight">
+                  Palacio de la Margarita
+                </h3>
+                <p className="mb-2 text-center">
+                  Si quieres alojarte en la finca, escríbenos y te explicamos
+                  cómo reservar.
+                </p>
+                <LinkButton
+                  text="VER HABITACIONES"
+                  href="https://palaciodelamargarita.com/habitaciones/"
+                />
+              </div>
             </div>
 
             <div className="flex flex-col items-center gap-1">
@@ -249,32 +242,12 @@ export default async function Home({ searchParams }: PageProps) {
                 Las Rozas
               </h3>
               <div className="grid grid-cols-1 gap-3">
-                <HotelCard
-                  name="B&B Hotel Madrid Las Rozas"
-                  href="https://www.bbhotellaspinar.com/"
-                />
-                <HotelCard
-                  name="Hotel Attica 21"
-                  code="BODAS10"
-                  href="https://www.hotelatica21.com/"
-                />
-                <HotelCard
-                  name="Exe Gran Hotel Almenar"
-                  code="BODAAYC"
-                  href="https://www.exehotel.com/"
-                />
-                <HotelCard
-                  name="B&B Hotel Pinar de las Rozas"
-                  href="https://www.hotelplazalasmatas.com/"
-                />
-                <HotelCard
-                  name="Hotel Plaza Las Matas"
-                  href="https://www.hotelplazalasmatas.com/"
-                />
-                <HotelCard
-                  name="Hotel Monte Rozas"
-                  href="https://www.hotelmonterozas.com/"
-                />
+                <HotelCard name="B&B Hotel Madrid Las Rozas" />
+                <HotelCard name="Hotel Attica 21" code="BODAS10" />
+                <HotelCard name="Exe Gran Hotel Almenar" code="BODAAYC" />
+                <HotelCard name="B&B Hotel Pinar de las Rozas" />
+                <HotelCard name="Hotel Plaza Las Matas" />
+                <HotelCard name="Hotel Monte Rozas" />
               </div>
             </div>
           </div>
@@ -295,18 +268,29 @@ export default async function Home({ searchParams }: PageProps) {
                 de pasarlo bien.
               </p>
             </div>
-            <div className="flex flex-col items-center">
-              <Label text="Lugar" />
-              <p className="mb-0.5 text-center font-serif text-2xl">
-                Ingenio Club
-              </p>
-              <p className="mb-2 text-center text-sm">
-                viernes 5 de junio, a las 20:00 h
-              </p>
-              <LinkButton
-                text="VER MAPA"
-                href="https://maps.app.goo.gl/4zJgCsVh7Ep6h4ms5"
-              />
+            <div className="flex flex-col items-center gap-10">
+              <div className="flex flex-col items-center">
+                <Label text="Fecha" />
+                <p className="mb-0.5 text-center font-serif text-2xl">
+                  Viernes 5 de junio
+                </p>
+                <p className="text-center font-sans text-sm">
+                  2026, a las 20:00 h
+                </p>
+              </div>
+              <div className="flex flex-col items-center">
+                <Label text="Lugar" />
+                <p className="mb-0.5 text-center font-serif text-2xl">
+                  Ingenio Club
+                </p>
+                <p className="mb-2 text-center text-sm">
+                  Villanueva de la Cañada (Madrid)
+                </p>
+                <LinkButton
+                  text="VER MAPA"
+                  href="https://maps.app.goo.gl/4zJgCsVh7Ep6h4ms5"
+                />
+              </div>
             </div>
           </div>
 
@@ -347,7 +331,7 @@ export default async function Home({ searchParams }: PageProps) {
           </div>
 
           <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
-            <div className="flex w-full max-w-[480px] flex-col gap-6 px-5">
+            <div className="flex w-full max-w-[480px] flex-col gap-4 px-5">
               <H2 text="Ahora solo falta tu respuesta" />
               <p className="text-center">
                 Ayúdanos rellenando este formulario a lo largo de Febrero para
@@ -366,22 +350,10 @@ export default async function Home({ searchParams }: PageProps) {
   );
 }
 
-function HotelCard({
-  name,
-  code,
-  href,
-}: {
-  name: string;
-  code?: string;
-  href: string;
-}) {
+function HotelCard({ name, code }: { name: string; code?: string }) {
   return (
     <div className="flex flex-col">
-      <li className="list-disc transition-opacity duration-200 marker:text-gold hover:opacity-70">
-        <Link href={href} target="_blank" rel="noopener noreferrer">
-          {name}
-        </Link>
-      </li>
+      <li className="list-disc marker:text-gold">{name}</li>
       {code && <p className="text-sm text-black/50">Código: {code}</p>}
     </div>
   );
