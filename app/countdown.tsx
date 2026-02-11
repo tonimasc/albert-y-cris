@@ -19,9 +19,8 @@ function getTimeLeft() {
 }
 
 export function Countdown() {
-  const [timeLeft, setTimeLeft] = useState<ReturnType<typeof getTimeLeft>>(
-    null
-  );
+  const [timeLeft, setTimeLeft] =
+    useState<ReturnType<typeof getTimeLeft>>(null);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -37,20 +36,20 @@ export function Countdown() {
 
   if (!mounted) {
     return (
-      <p className="text-center font-serif text-xl text-chocolate">&nbsp;</p>
+      <p className="text-center font-serif text-base text-chocolate">&nbsp;</p>
     );
   }
 
   if (!timeLeft) {
     return (
-      <p className="text-center font-serif text-xl text-chocolate">
-        &iexcl;Hoy es el gran d&iacute;a!
+      <p className="text-center font-serif text-base text-chocolate">
+        Hoy es el gran día!
       </p>
     );
   }
 
   return (
-    <p className="text-center font-serif text-xl text-chocolate">
+    <p className="text-center font-serif text-base text-chocolate">
       {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
     </p>
   );

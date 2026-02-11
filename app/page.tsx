@@ -41,16 +41,6 @@ export async function generateMetadata({
   return {
     title,
     description,
-    openGraph: {
-      title,
-      description,
-      type: "website",
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
   };
 }
 
@@ -133,7 +123,6 @@ export default async function Home({ searchParams }: PageProps) {
               height={300}
               className="h-[300px] w-[300px] rounded-md object-cover"
               placeholder="blur"
-              objectFit="cover"
             />
             <Image
               src={image4}
@@ -149,7 +138,6 @@ export default async function Home({ searchParams }: PageProps) {
               width={300}
               height={300}
               className="h-[300px] w-[300px] rounded-md object-cover"
-              objectFit="cover"
               placeholder="blur"
             />
           </div>
@@ -285,11 +273,11 @@ export default async function Home({ searchParams }: PageProps) {
           </div>
 
           <Image
-            src="/flower/flower-1.png"
+            src={flower4}
             alt="Flower"
-            width={680}
-            height={233}
-            className="-mt-5 h-auto w-full max-w-[400px]"
+            width={400}
+            height={137}
+            className="w-full max-w-[400px] scale-x-[-1] px-5"
           />
 
           <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-8 px-5">
@@ -315,8 +303,8 @@ export default async function Home({ searchParams }: PageProps) {
             </div>
           </div>
 
-          <div className="flex w-full max-w-[480px] flex-col items-center justify-center px-5">
-            <div className="flex flex-col items-center gap-4 pb-4">
+          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-10 px-5">
+            <div className="flex flex-col items-center gap-4">
               <H2 text="Regalos" />
               <div className="flex flex-col gap-4">
                 <p className="text-center">
@@ -324,32 +312,31 @@ export default async function Home({ searchParams }: PageProps) {
                   si además queréis ayudarnos a empezar esta aventura juntos,
                   podéis hacerlo en esta cuenta.
                 </p>
-                <p className="text-center">ES9121000418450200051332</p>
+                <p className="text-center">ESXXXXXXXXXXXXXX</p>
               </div>
             </div>
-          </div>
-
-          <div className="flex w-full max-w-[480px] flex-col gap-1 px-5">
-            <Image
-              src="/flower/flower-6.png"
-              alt="Flower"
-              width={680}
-              height={233}
-              className="h-auto w-full"
-            />
-            <div className="flex flex-col items-center">
-              <p className="text-center font-serif text-4xl tracking-tight text-chocolate italic">
-                Albert & Cristina
-              </p>
-              <Countdown />
+            <div className="flex w-full max-w-[196px] flex-col px-5">
+              <Image
+                src="/flower/flower-3.png"
+                alt="Flower"
+                width={680}
+                height={233}
+                className="h-auto w-full"
+              />
+              <div className="flex flex-col items-center">
+                <p className="text-center font-serif text-xl tracking-tight text-chocolate italic">
+                  Albert & Cristina
+                </p>
+                <Countdown />
+              </div>
+              <Image
+                src="/flower/flower-1.png"
+                alt="Flower"
+                width={680}
+                height={233}
+                className="h-auto w-full"
+              />
             </div>
-            <Image
-              src="/flower/flower-5.png"
-              alt="Flower"
-              width={680}
-              height={233}
-              className="h-auto w-full"
-            />
           </div>
 
           <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
@@ -383,7 +370,7 @@ function HotelCard({
 }) {
   return (
     <div className="flex flex-col">
-      <li className="list-disc font-serif text-lg transition-opacity duration-200 marker:text-gold hover:opacity-70">
+      <li className="list-disc transition-opacity duration-200 marker:text-gold hover:opacity-70">
         <Link href={href} target="_blank" rel="noopener noreferrer">
           {name}
         </Link>
