@@ -294,39 +294,42 @@ export default async function Home({ searchParams }: PageProps) {
             </div>
           </div>
 
-          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-16 px-5">
+          <div className="flex w-full max-w-[480px] flex-col items-center justify-center px-5">
             <div className="flex flex-col items-center gap-4">
               <H2 text="Regalo" />
               <div className="flex flex-col gap-4">
                 <p className="text-center">
                   Vuestra presencia es el mejor regalo. Si aún así queréis
-                  ayudarnos con nuestra luna de miel, podéis hacerlo aquí: ES43
-                  1583 0001 1391 8025 4342
+                  ayudarnos con nuestra luna de miel, podéis hacerlo aquí:{" "}
+                  <span className="text-nowrap">
+                    ES43 1583 0001 1391 8025 4342
+                  </span>
                 </p>
               </div>
             </div>
-            <div className="flex w-full max-w-[320px] flex-col px-5">
-              <Image
-                src="/flower/flower-3.png"
-                alt="Flower"
-                width={680}
-                height={233}
-                className="h-auto w-full"
-              />
-              <div className="flex flex-col items-center">
-                <p className="text-center font-serif text-4xl tracking-tight text-chocolate italic">
-                  Albert & Cristina
-                </p>
-                <Countdown />
-              </div>
-              <Image
-                src="/flower/flower-1.png"
-                alt="Flower"
-                width={680}
-                height={233}
-                className="h-auto w-full"
-              />
+          </div>
+
+          <div className="flex w-full max-w-[320px] flex-col px-5 pt-5">
+            <Image
+              src="/flower/flower-3.png"
+              alt="Flower"
+              width={680}
+              height={233}
+              className="h-auto w-full"
+            />
+            <div className="flex flex-col items-center">
+              <p className="text-center font-serif text-4xl tracking-tight text-chocolate italic">
+                Albert & Cristina
+              </p>
+              <Countdown />
             </div>
+            <Image
+              src="/flower/flower-1.png"
+              alt="Flower"
+              width={680}
+              height={233}
+              className="h-auto w-full"
+            />
           </div>
 
           <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
