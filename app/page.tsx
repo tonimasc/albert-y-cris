@@ -13,17 +13,26 @@ import Link from "next/link";
 import { Countdown } from "./countdown";
 
 interface PageProps {
-  searchParams: Promise<{ name?: string }>;
+  searchParams: Promise<{ name?: string; name2?: string }>;
+}
+
+function getGuestName(name?: string, name2?: string): string {
+  if (name && name2) return `${name} & ${name2}`;
+
+  if (name) return name;
+
+  return "";
 }
 
 export async function generateMetadata({
   searchParams,
 }: PageProps): Promise<Metadata> {
-  const { name } = await searchParams;
-  const guestName = name || "";
+  const { name, name2 } = await searchParams;
+  const guestName = getGuestName(name, name2);
 
+  const isPlural = !!(name && name2);
   const title = guestName
-    ? `${guestName}, nos casamos y queremos que estés allí`
+    ? `${guestName}, nos casamos y queremos que ${isPlural ? "estéis" : "estés"} allí`
     : "Nos casamos y queremos que estés allí";
 
   const description =
@@ -46,15 +55,18 @@ export async function generateMetadata({
 }
 
 export default async function Home({ searchParams }: PageProps) {
-  const { name } = await searchParams;
-  const title = name
-    ? `${name}, queremos que nos acompañes`
-    : "Queremos que nos acompañes";
+  const { name, name2 } = await searchParams;
+  const guestName = getGuestName(name, name2);
+  const isPlural = !!(name && name2);
+  const title = isPlural
+    ? "Queremos que nos acompañéis"
+    : "Queremos que nos acompáñes";
 
   return (
     <main className="relative flex flex-col items-center justify-center overflow-hidden bg-paper text-charcoal">
       <div className="pointer-events-none absolute inset-0 z-10 bg-[url('/texture.png')] bg-repeat opacity-50 mix-blend-multiply dark:mix-blend-multiply"></div>
-      <div className="flex w-full max-w-2xl flex-col items-center border-r border-l border-black/5 pt-20">
+
+      <div className="flex w-full max-w-2xl flex-col items-center border-r border-l border-black/5 pt-16">
         <div className="relative flex flex-col items-center gap-5">
           <Image
             src={flower3}
@@ -63,9 +75,16 @@ export default async function Home({ searchParams }: PageProps) {
             height={233}
             className="w-full px-5"
           />
-          <h1 className="px-5 text-center font-serif text-5xl leading-[1.1] tracking-tight text-balance text-chocolate italic sm:text-6xl">
-            {title}
-          </h1>
+          <div className="flex flex-col items-center px-5 text-center">
+            {guestName && (
+              <div className="-mb-1 font-serif text-lg text-chocolate">
+                {guestName}
+              </div>
+            )}
+            <h1 className="font-serif text-5xl tracking-tight text-balance text-chocolate italic sm:text-6xl">
+              {title}
+            </h1>
+          </div>
         </div>
 
         <div className="flex flex-col items-center gap-16 pt-10 font-sans text-base leading-normal">
