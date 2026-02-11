@@ -289,7 +289,7 @@ export default async function Home({ searchParams }: PageProps) {
               </p>
             </div>
             <div className="flex flex-col items-center">
-              <Label text="Evento Preboda" />
+              <Label text="Lugar" />
               <p className="mb-0.5 text-center font-serif text-2xl">
                 Ingenio Club
               </p>
