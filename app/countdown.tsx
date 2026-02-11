@@ -36,20 +36,20 @@ export function Countdown() {
 
   if (!mounted) {
     return (
-      <p className="text-center font-serif text-base text-chocolate">&nbsp;</p>
+      <p className="text-center font-serif text-2xl text-chocolate">&nbsp;</p>
     );
   }
 
   if (!timeLeft) {
     return (
-      <p className="text-center font-serif text-base text-chocolate">
+      <p className="text-center font-serif text-2xl text-chocolate">
         Hoy es el gran día!
       </p>
     );
   }
 
   return (
-    <p className="text-center font-serif text-base text-chocolate">
+    <p className="text-center font-serif text-2xl text-chocolate">
       {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
     </p>
   );

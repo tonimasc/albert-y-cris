@@ -294,19 +294,18 @@ export default async function Home({ searchParams }: PageProps) {
             </div>
           </div>
 
-          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-10 px-5">
+          <div className="flex w-full max-w-[480px] flex-col items-center justify-center gap-16 px-5">
             <div className="flex flex-col items-center gap-4">
-              <H2 text="Regalos" />
+              <H2 text="Regalo" />
               <div className="flex flex-col gap-4">
                 <p className="text-center">
-                  Vuestra presencia en nuestro gran día es el mejor regalo. Pero
-                  si además queréis ayudarnos a empezar esta aventura juntos,
-                  podéis hacerlo en esta cuenta.
+                  Vuestra presencia es el mejor regalo. Si aún así queréis
+                  ayudarnos a empezar esta aventura, podéis hacerlo aquí: ES43
+                  1583 0001 1391 8025 4342
                 </p>
-                <p className="text-center">ESXXXXXXXXXXXXXX</p>
               </div>
             </div>
-            <div className="flex w-full max-w-[196px] flex-col px-5">
+            <div className="flex w-full max-w-[320px] flex-col px-5">
               <Image
                 src="/flower/flower-3.png"
                 alt="Flower"
@@ -315,7 +314,7 @@ export default async function Home({ searchParams }: PageProps) {
                 className="h-auto w-full"
               />
               <div className="flex flex-col items-center">
-                <p className="text-center font-serif text-xl tracking-tight text-chocolate italic">
+                <p className="text-center font-serif text-4xl tracking-tight text-chocolate italic">
                   Albert & Cristina
                 </p>
                 <Countdown />
