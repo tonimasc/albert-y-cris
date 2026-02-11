@@ -82,7 +82,7 @@ export default async function Home({ searchParams }: PageProps) {
         </div>
 
         <div className="flex flex-col items-center gap-16 pt-10 font-sans text-base leading-normal">
-          <div className="flex w-full max-w-[548px] flex-col gap-5 px-5 text-center">
+          <div className="flex w-full max-w-[480px] flex-col gap-5 px-5 text-center">
             <p>
               Hace ocho años, en Toulouse, llenos de sueños y ganas de comernos
               el mundo, nuestros caminos se cruzaron por primera vez.
@@ -97,8 +97,8 @@ export default async function Home({ searchParams }: PageProps) {
               creciendo.
             </p>
             <p>
-              Tras cinco años, decidimos empezar una nueva vida juntos en Madrid
-              y ahora estamos listos para el siguiente paso.
+              Tras cinco años a distancia, decidimos empezar una nueva vida
+              juntos en Madrid y ahora estamos listos para el siguiente paso.
             </p>
             <p>
               ¡Sí, nos casamos! Y no tendría sentido celebrarlo sin{" "}
@@ -347,7 +347,7 @@ export default async function Home({ searchParams }: PageProps) {
           </div>
 
           <div className="flex w-full justify-center border-t border-black/5 bg-black/2 pt-14">
-            <div className="flex w-full max-w-[558px] flex-col gap-6 px-5">
+            <div className="flex w-full max-w-[480px] flex-col gap-6 px-5">
               <H2 text="Ahora solo falta tu respuesta" />
               <p className="text-center">
                 Ayúdanos rellenando este formulario a lo largo de Febrero para
