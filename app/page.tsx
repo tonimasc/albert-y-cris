@@ -16,10 +16,14 @@ interface PageProps {
   searchParams: Promise<{ name?: string; name2?: string }>;
 }
 
-function getGuestName(name?: string, name2?: string): string {
-  if (name && name2) return `${name} & ${name2}`;
+function capitalize(str: string): string {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-  if (name) return name;
+function getGuestName(name?: string, name2?: string): string {
+  if (name && name2) return `${capitalize(name)} & ${capitalize(name2)}`;
+
+  if (name) return capitalize(name);
 
   return "";
 }
@@ -31,12 +35,12 @@ export async function generateMetadata({
   const guestName = getGuestName(name, name2);
 
   const isPlural = !!(name && name2);
+
   const title = guestName
     ? `${guestName}, nos casamos y queremos que ${isPlural ? "estéis" : "estés"} allí`
     : "Nos casamos y queremos que estés allí";
 
-  const description =
-    "El sábado 6 de junio de 2026, a las 18:00 h, nos casamos en el Palacio de la Margarita, en Collado Villalba (Madrid). Nos haría mucha ilusión celebrarlo contigo.";
+  const description = `El sábado 6 de junio de 2026, a las 18:00 h, nos casamos en el Palacio de la Margarita, en Collado Villalba (Madrid). Nos haría mucha ilusión celebrarlo ${isPlural ? "con vosotros" : "contigo"}.`;
 
   return {
     title,
@@ -50,7 +54,7 @@ export default async function Home({ searchParams }: PageProps) {
   const isPlural = !!(name && name2);
   const title = isPlural
     ? "Queremos que nos acompañéis"
-    : "Queremos que nos acompáñes";
+    : "Queremos que nos acompañes";
 
   return (
     <main className="relative flex flex-col items-center justify-center overflow-hidden bg-paper text-charcoal">
@@ -71,14 +75,14 @@ export default async function Home({ searchParams }: PageProps) {
                 {guestName}
               </div>
             )}
-            <h1 className="font-serif text-5xl tracking-tight text-balance text-chocolate italic sm:text-6xl">
+            <h1 className="font-serif text-5xl leading-[1.05] tracking-tight text-balance text-chocolate italic sm:text-6xl">
               {title}
             </h1>
           </div>
         </div>
 
         <div className="flex flex-col items-center gap-16 pt-10 font-sans text-base leading-normal">
-          <div className="flex w-full max-w-[548px] flex-col gap-5 px-5">
+          <div className="flex w-full max-w-[548px] flex-col gap-5 px-5 text-center">
             <p>
               Hace ocho años, en Toulouse, llenos de sueños y ganas de comernos
               el mundo, nuestros caminos se cruzaron por primera vez.
@@ -96,7 +100,10 @@ export default async function Home({ searchParams }: PageProps) {
               Tras cinco años, decidimos empezar una nueva vida juntos en Madrid
               y ahora estamos listos para el siguiente paso.
             </p>
-            <p>¡Sí, nos casamos! Y no tendría sentido celebrarlo sin ti.</p>
+            <p>
+              ¡Sí, nos casamos! Y no tendría sentido celebrarlo sin{" "}
+              {isPlural ? "vosotros" : "ti"}.
+            </p>
           </div>
 
           <div className="flex w-full flex-row gap-3 overflow-x-auto px-5">
