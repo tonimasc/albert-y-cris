@@ -336,8 +336,8 @@ export default async function Home({ searchParams }: PageProps) {
             <div className="flex w-full max-w-[480px] flex-col gap-4 px-5">
               <H2 text="Ahora solo falta tu respuesta" />
               <p className="text-center">
-                Ayúdanos rellenando este formulario a lo largo de Febrero para
-                poder preparar la fiesta como se merece.
+                Ayúdanos rellenando este formulario lo antes posible poder
+                preparar la fiesta como se merece.
               </p>
               <iframe
                 src="https://tally.so/embed/RGDVgj?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
